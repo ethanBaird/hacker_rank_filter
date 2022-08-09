@@ -1,7 +1,21 @@
+import NewsItem from "./NewsItem"
+
 const NewsList = ({news}) => {
-    
+    const newsItems = news.map((item, index) => {
+        return (
+            <li key={index} className='news-list'>
+                <NewsItem story={item}/>
+                <hr/>
+            </li>
+            
+        )
+    })
+
     return (
-        <h1>news list</h1>
+        <ul>
+            <hr/>
+            {newsItems}
+        </ul>
     )
 }
 
